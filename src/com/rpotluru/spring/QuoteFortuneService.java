@@ -1,10 +1,15 @@
 package com.rpotluru.spring;
 
-public class QuoteFortuneService implements FortuneService {
+import java.util.Random;
 
+public class QuoteFortuneService implements FortuneService {
+	
+	String[] quotes = {"Hardwork", "Dedication", "Discipline"};
 	@Override
 	public String getFortune() {
-		return "Good Quote";
+		Random rand = new Random();
+		int i = rand.nextInt(3);
+		return quotes[i];
 	}
 
 }

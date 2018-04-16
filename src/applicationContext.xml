@@ -6,14 +6,40 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-
-    <!-- Define your beans here -->
-    <bean id="myFortuneService" class="com.rpotluru.spring.QuoteFortuneService">
     
-    </bean>
-    <bean id="coach" class="com.rpotluru.spring.BaseballCoach">
+    <context:property-placeholder location="classpath:sports.properties"/>
+    <!-- Define your beans here -->
+    <bean id="myFortuneService" class="com.rpotluru.spring.QuoteFortuneService" />
+    
+    <!-- Constructor Injection -->
+<!-- <bean id="myCoach" class="com.rpotluru.spring.BaseballCoach">
     	<constructor-arg ref="myFortuneService"></constructor-arg>
+    </bean> --> 
+    
+     <!-- Constructor Injection -->
+  <!--    <bean id="myCoach" class="com.rpotluru.spring.CricketCoach">
+    	<constructor-arg ref="myFortuneService"></constructor-arg>
+    	<constructor-arg value="prk.iisc@gmail.com"></constructor-arg>
+    	<constructor-arg value="india"></constructor-arg>
+    </bean> -->
+    
+    
+<!--      Setter Injection -->
+<!-- 
+    <bean id="myCoach" class="com.rpotluru.spring.CricketCoach">
+    	<property name="fortuneService" ref="myFortuneService"/>
+    	literal Injection  
+		<property name="emailAddress" value="prk.iisc@gmail.com" />
+    	<property name="team" value="Andhra" />
+    </bean> -->
+    
+    <!--      Setter Injection and properties file -->
+    <bean id="myCoach" class="com.rpotluru.spring.CricketCoach">
+    	<property name="fortuneService" ref="myFortuneService"/>
+		<property name="emailAddress" value="${foo.email}" />
+    	<property name="team" value="${foo.team}" />
     </bean>
+    
     
 </beans>
 
