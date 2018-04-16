@@ -8,7 +8,7 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Define your beans here -->
-    <bean id="myFortuneService" class="com.rpotluru.spring.HappyFortuneService">
+    <bean id="myFortuneService" class="com.rpotluru.spring.QuoteFortuneService">
     
     </bean>
     <bean id="coach" class="com.rpotluru.spring.BaseballCoach">

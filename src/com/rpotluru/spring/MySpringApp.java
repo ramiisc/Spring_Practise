@@ -8,6 +8,7 @@ public class MySpringApp {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		Coach theCoach = context.getBean("coach", Coach.class);
 		System.out.println(theCoach.getDailyWorkout());
+		System.out.println(theCoach.getDailyFortune());
 		context.close();
 	}
 
